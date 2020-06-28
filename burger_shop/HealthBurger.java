@@ -17,10 +17,6 @@ public class HealthBurger extends Burger {
 		
 		toppingList.showToppings();
 		
-		if(sideType.getSideType() != null) {
-			System.out.println("The side is " + sideType.getSideType());
-		}
-		
 		this.totalBurgerPrice();
 	}
 }

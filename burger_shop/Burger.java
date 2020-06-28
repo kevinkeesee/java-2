@@ -8,13 +8,13 @@ public class Burger {
 	
 	protected Bread breadType;
 	protected Meat meatType;
-	protected Side sideType;
 	protected Toppings toppingList;
 
 	protected int maxToppings;
 	
-	protected double price;
+	protected static double price;
 	protected double totalBurgerPrice;
+	protected static double toppingPrice = 0.3;
 	
 	public Burger() {
 		price = 2.99;
@@ -22,28 +22,31 @@ public class Burger {
 		
 		breadType = new Bread();
 		meatType = new Meat();
-		sideType = new Side();
 		
 		maxToppings = 2;
 		toppingList = new Toppings(1);
+	}
+
+	public void changeBread(Bread bread) {
+		breadType = bread;
+	}
+	
+	public void changeMeat(Meat meat) {
+		meatType = meat;
 	}
 	
 	public void plainBurgerPrice() {
 		System.out.println("The base price of a plain burger is $" + price + " plus tax.");
 	}
 	
-	public void totalBurgerPrice() {
-		System.out.println("The total cost of the burger is $" + f.format(totalBurgerPrice) + " plus tax.");
+	public double totalBurgerPrice() {
+		return Double.parseDouble(f.format(totalBurgerPrice));
 	}
 	
 	public void showValues() {
 		System.out.println("This is a standard burger.  The bun type is " + this.breadType.getBreadType() + ", the meat type is " + meatType.getMeatType());
 		
 		toppingList.showToppings();
-		
-		if(sideType.getSideType() != null) {
-			System.out.println("The side is " + sideType.getSideType());
-		}
 		
 		this.totalBurgerPrice();
 	}
@@ -57,7 +60,7 @@ public class Burger {
 			System.out.println("Please enter a valid topping type.");
 			return false;
 		}
-		totalBurgerPrice += 0.3;
+		totalBurgerPrice += toppingPrice;
 		return true;
 	}
 }

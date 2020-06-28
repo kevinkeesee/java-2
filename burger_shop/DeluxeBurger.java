@@ -5,8 +5,6 @@ public class DeluxeBurger extends Burger {
 		price = 4.99;
 		totalBurgerPrice = price;
 		
-		sideType = new Side("French Fries");
-		
 		maxToppings = 6;
 		toppingList = new Toppings(1);
 	}
@@ -15,10 +13,6 @@ public class DeluxeBurger extends Burger {
 		System.out.println("This is a double deluxe burger.  The bun type is " + this.breadType.getBreadType() + ", the meat type is " + meatType.getMeatType());
 		
 		toppingList.showToppings();
-		
-		if(sideType.getSideType() != null) {
-			System.out.println("The side is " + sideType.getSideType());
-		}
 		
 		this.totalBurgerPrice();
 	}

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Toppings {
 	
 	private String[] toppingsTypes;
-	ArrayList<String> toppings;
+	protected ArrayList<String> toppings;
 	
 	public Toppings(int selector) {
 		switch(selector) {
@@ -19,6 +19,16 @@ public class Toppings {
 		}
 		
 		toppings = new ArrayList<String>();
+	}
+	
+	// For initializing Toppings to add to an Order
+	public Toppings(String ...ts) {
+		toppingsTypes = new String[] {"Cheese", "Lettuce", "Onions", "Tomato", "Pickles", "Ketchup", "Mustard", "Mayonnaise", "Bacon"};
+		toppings = new ArrayList<String>();
+		
+		for (String t : ts) {
+			addTopping(t);
+		}
 	}
 	
 	public void showToppings() {
@@ -62,5 +72,17 @@ public class Toppings {
 			return 0;
 		}
 		return toppings.size();
+	}
+	
+	// For use in the Order class
+	public void printToppings() {
+		if(toppings.size() == 1) {
+			System.out.print(toppings.get(0));
+			return;
+		}
+		
+		for (int i = 0; i < toppings.size(); i++) {
+			System.out.println(toppings.get(i));
+		}
 	}
 }

@@ -1,11 +1,11 @@
 package burger_shop;
 
 public class Side {
-	protected static String[] sideTypes = {"French Fries", "Chicken Nuggets", "Chili", "Baked Potato"};
+	protected static String[] sideTypes = {"French Fries", "Chicken Nuggets", "Chili", "Baked Potato", "Ice Cream"};
 	protected String type;
 	
 	public Side() {
-		type = null;
+		type = sideTypes[0];
 	}
 	
 	public Side(String type) {
