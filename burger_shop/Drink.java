@@ -2,17 +2,7 @@ package burger_shop;
 
 public class Drink {
 	protected static String[] drinkTypes = {"water", "Coca Cola", "Pepsi", "lemonade", "Gatorade", "Dr Pepper"};
-	protected String type;
-	
-	public Drink() {
-		type = drinkTypes[0];
-	}
-	
-	public Drink(String type) {
-		if(!this.setDrinkType(type)) {
-			this.type = drinkTypes[0];
-		}
-	}
+	protected String type = drinkTypes[0];
 	
 	public String getDrinkType() {
 		if (type != null) {

@@ -20,7 +20,6 @@ public class Burger {
 		price = 2.99;
 		totalBurgerPrice = price;
 		
-		breadType = new Bread();
 		meatType = new Meat();
 		
 		maxToppings = 2;

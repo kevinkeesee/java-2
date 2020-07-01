@@ -2,17 +2,7 @@ package burger_shop;
 
 public class Bread {
 	protected static String[] breadTypes = {"Plain", "Sesame Seed", "Potato", "English Muffin", "Pretzel", "Sliced Bread", "Lettuce"};
-	protected String type;
-	
-	public Bread() {
-		type = breadTypes[0];
-	}
-	
-	public Bread(String type) {
-		if(!this.setBreadType(type)) {
-			this.type = breadTypes[0];
-		}
-	}
+	protected String type = breadTypes[0];
 	
 	public String getBreadType() {
 		return type.toLowerCase();

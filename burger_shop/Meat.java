@@ -2,17 +2,7 @@ package burger_shop;
 
 public class Meat {
 	protected static String[] meatTypes = {"Beef", "Chicken", "Steak", "Vegetarian"};
-	protected String type;
-	
-	public Meat() {
-		type = meatTypes[0];
-	}
-	
-	public Meat(String type) {
-		if(!this.setMeatType(type)) {
-			this.type = meatTypes[0];
-		}
-	}
+	protected String type = meatTypes[0];
 	
 	public String getMeatType() {
 		return type.toLowerCase();

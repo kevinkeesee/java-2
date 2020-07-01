@@ -68,9 +68,6 @@ public class Toppings {
 	}
 	
 	public int numberOfToppings() {
-		if(toppings == null) {
-			return 0;
-		}
 		return toppings.size();
 	}
 	
